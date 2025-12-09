@@ -3,16 +3,25 @@
   "version": "1.0.0",
   "type": "module",
   "description": "In this Project Students will optimize and test a front-end web application called Study Night, a flashcard tool. Using the skills gained throughout this course, they will create tests to ensure product quality, install and configure necessary project dependencies, and optimize and automate the application tasks.",
-  "main": "index.js",
+  "source": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "gulp",
+    "test": "gulp test"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "chai": "^6.2.1",
+    "cypress": "^15.7.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react": "^7.37.5",
-    "globals": "^16.5.0"
+    "globals": "^16.5.0",
+    "gulp": "^5.0.1",
+    "gulp-cli": "^3.1.0",
+    "gulp-shell": "^0.8.0",
+    "mocha": "^11.7.5",
+    "parcel": "^2.16.3",
+    "prettier": "^3.7.4"
   }
 }
