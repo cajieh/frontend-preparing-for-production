@@ -10,7 +10,7 @@ describe("Form Tests", () => {
       // Make the form visible by clicking the toggle button if needed
       cy.get('[data-cy="set_form"]').then(($form) => {
         if ($form.hasClass("notVisible")) {
-          cy.contains("button", /create/i).click();
+          cy.contains("button", "Add New Set").click();
         }
       });
 
@@ -28,7 +28,7 @@ describe("Form Tests", () => {
       // Make the form visible by clicking the toggle button if needed
       cy.get('[data-cy="set_form"]').then(($form) => {
         if ($form.hasClass("notVisible")) {
-          cy.contains("button", /create/i).click();
+          cy.contains("button", "Add New Set").click();
         }
       });
 
@@ -48,7 +48,7 @@ describe("Form Tests", () => {
       // Create a card set first so we can add cards to it
       cy.get('[data-cy="set_form"]').then(($form) => {
         if ($form.hasClass("notVisible")) {
-          cy.contains("button", /create/i).click();
+          cy.contains("button", "Add New Set").click();
         }
       });
 
@@ -62,6 +62,9 @@ describe("Form Tests", () => {
     });
 
     it("should successfully submit a valid card with term and description (happy path)", () => {
+      // Make the form visible by clicking the toggle button
+      cy.contains("button", "Add New Card").click();
+
       // Fill in the card form with valid data
       cy.get('[data-cy="card_form"]').within(() => {
         cy.get('input[name="termInput"]').type("Test Term");
@@ -74,6 +77,9 @@ describe("Form Tests", () => {
     });
 
     it("should show an error when submitting an empty term (unhappy path)", () => {
+      // Make the form visible by clicking the toggle button
+      cy.contains("button", "Add New Card").click();
+
       // Submit the form with only a description
       cy.get('[data-cy="card_form"]').within(() => {
         cy.get('input[name="descriptionInput"]').type("Test Description");
@@ -86,6 +92,9 @@ describe("Form Tests", () => {
     });
 
     it("should show an error when submitting an empty description (unhappy path)", () => {
+      // Make the form visible by clicking the toggle button
+      cy.contains("button", "Add New Card").click();
+
       // Submit the form with only a term
       cy.get('[data-cy="card_form"]').within(() => {
         cy.get('input[name="termInput"]').type("Test Term");
@@ -98,6 +107,9 @@ describe("Form Tests", () => {
     });
 
     it("should show an error when submitting both empty fields (unhappy path)", () => {
+      // Make the form visible by clicking the toggle button
+      cy.contains("button", "Add New Card").click();
+
       // Submit the form without entering anything
       cy.get('[data-cy="card_form"]').within(() => {
         cy.get('input[type="submit"]').click();
