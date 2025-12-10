@@ -216,7 +216,3 @@ frontend-preparing-for-production/
 ## License
 
 MIT
-
-## Author
-
-Study Night Team
