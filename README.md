@@ -31,31 +31,56 @@ npm install
 
 ## Running the Application
 
+**IMPORTANT:** This application uses ES modules and Parcel's module bundling system. **Do NOT open the HTML files directly in your browser** (using `file://` protocol) as the images and modules will not load correctly. Always use one of the commands below to run the application through a development server.
+
 ### Development Mode
 
 To run the application in development mode with live reload:
 
 ```bash
-npm run gulp
+npm start
 ```
 
 This will:
 - Start the Parcel development server
-- Open the application in your default browser at `http://localhost:1234`
+- Automatically open the application in your default browser at `http://localhost:1234`
 - Watch for file changes and auto-reload
+
+Alternatively, to start the server without auto-opening the browser:
+
+```bash
+npm run dev
+```
+
+Or using Gulp:
+
+```bash
+npm run gulp
+```
 
 ### Production Build
 
 To create an optimized production build:
 
 ```bash
-npx parcel build index.html
+npm run build
 ```
 
 The optimized files will be created in the `dist/` directory with:
 - Minified CSS and JavaScript
 - Optimized and compressed images
 - Bundled and concatenated files
+- Content-hashed filenames for optimal caching
+
+### Preview Production Build
+
+To build and preview the production version locally:
+
+```bash
+npm run preview
+```
+
+This will build the project and serve it at `http://localhost:3000`.
 
 ## Running Tests
 
@@ -83,10 +108,15 @@ This will run all Mocha tests in the `test/` directory.
 
 1. Start the development server in one terminal:
 ```bash
-npm run gulp
+npm run dev
 ```
 
 2. In a separate terminal, run Cypress tests:
+```bash
+npm run cypress
+```
+
+Or using Gulp:
 ```bash
 npm run gulp cypress
 ```
@@ -95,10 +125,15 @@ npm run gulp cypress
 
 1. Start the development server in one terminal:
 ```bash
-npm run gulp
+npm run dev
 ```
 
 2. In a separate terminal, open Cypress Test Runner:
+```bash
+npm run cypress:open
+```
+
+Or:
 ```bash
 npx cypress open
 ```

@@ -11,7 +11,8 @@ const createElement = (elementType, text) => {
 // Creates images with alt
 const createImage = (url, alt) => {
   const img = document.createElement("img");
-  img.src = url;
+  // Handle Parcel's image imports which may return an object with a default property
+  img.src = typeof url === 'object' && url.default ? url.default : url;
   img.alt = alt;
   return img;
 };
